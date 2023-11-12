@@ -1,0 +1,65 @@
+// Protocol Buffers (.proto) Documentation
+
+// Specifies that this file uses the proto3 syntax.
+syntax = "proto3";
+
+// Specifies the package name for the generated code.
+package profileservice;
+
+// Service Documentation:
+// The ProfileService service provides operations related to user profiles.
+service ProfileService {
+  // CreateProfile Method:
+  // Creates a user profile based on the provided request.
+  //
+  // Request:
+  //   - username: The username of the user.
+  //     Field number: 1
+  //   - user_id: The unique identifier for the user.
+  //     Field number: 2
+  //   - profile_image_url: The URL of the user's profile image.
+  //     Field number: 3
+  //
+  // Response:
+  //   - status: The status of the create profile operation.
+  //     Field number: 1
+  //   - msg: A human-readable message providing additional information about the operation.
+  //     Field number: 2
+  //   - error: If an error occurred, this field contains a human-readable error message.
+  //     Field number: 3
+  rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse) {}
+}
+
+// Message Documentation:
+
+// CreateProfileRequest Message:
+// The request message for the CreateProfile method.
+message CreateProfileRequest {
+  // The username of the user.
+  // Field number: 1
+  string username = 1;
+
+  // The unique identifier for the user.
+  // Field number: 2
+  int32 user_id = 2;
+
+  // The URL of the user's profile image.
+  // Field number: 3
+  string profile_image_url = 3;
+}
+
+// CreateProfileResponse Message:
+// The response message for the CreateProfile method.
+message CreateProfileResponse {
+  // The status of the create profile operation.
+  // Field number: 1
+  int32 status = 1;
+
+  // A human-readable message providing additional information about the operation.
+  // Field number: 2
+  string msg = 2;
+
+  // If an error occurred, this field contains a human-readable error message.
+  // Field number: 3
+  string error = 3;
+}
