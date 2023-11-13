@@ -7,6 +7,8 @@ try:  #importing dependencies and system variables
     import django
 
     load_dotenv()
+
+    #Ensure that the DJANGO_SETTINGS_MODULE is defined with a default value
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings") 
 
     # Extend sys.path with the Django project path
